@@ -5,6 +5,8 @@ import { LoginComponent }      from './login/login.component';
 import { HomeComponent }      from './home/home.component';
 import { InformationsComponent }      from './informations/informations.component';
 import { RegistrationComponent }      from './registration/registration.component';
+import { SearchHospitalComponent } from './search-hospital/search-hospital.component';
+import { HospitalDetailComponent } from './hospital-detail/hospital-detail.component';
 
 import { SiteLayoutComponent }      from './_layout/site-layout/site-layout.component';
 
@@ -24,8 +26,9 @@ const routes: Routes = [
     ]
 },
 
-  /*{ path: 'home', component: HomeComponent },
-  { path: 'registration', component: RegistrationComponent },
+  { path: 'searchhostpital', component: SearchHospitalComponent },
+  {path : 'hospital/:id', component: HospitalDetailComponent},
+  /*{ path: 'registration', component: RegistrationComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'informations', component: InformationsComponent }*/

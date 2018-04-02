@@ -12,6 +12,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { InformationsComponent } from './informations/informations.component';
 import { LoginComponent } from './login/login.component';
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
+import { SearchHospitalComponent } from './search-hospital/search-hospital.component';
+import { HospitalDetailComponent } from './hospital-detail/hospital-detail.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component
     RegistrationComponent,
     InformationsComponent,
     LoginComponent,
-    SiteLayoutComponent
+    SiteLayoutComponent,
+    SearchHospitalComponent,
+    HospitalDetailComponent
   ],
   imports: [
     BrowserModule,
