@@ -14,7 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 import { SearchHospitalComponent } from './search-hospital/search-hospital.component';
 import { HospitalDetailComponent } from './hospital-detail/hospital-detail.component';
-
+import { HttpModule, Http, Response, RequestOptions, Headers } from '@angular/http';
+import { HttptestComponent } from './httptest/httptest.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +30,14 @@ import { HospitalDetailComponent } from './hospital-detail/hospital-detail.compo
     LoginComponent,
     SiteLayoutComponent,
     SearchHospitalComponent,
-    HospitalDetailComponent
+    HospitalDetailComponent,
+    HttptestComponent
   ],
   imports: [
     BrowserModule,
     BootstrapModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

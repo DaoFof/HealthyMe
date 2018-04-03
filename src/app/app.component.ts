@@ -1,5 +1,6 @@
 import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { HttpModule } from '@angular/http';
 
 @Component({
   selector: 'app-root',
