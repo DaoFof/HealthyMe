@@ -14,8 +14,11 @@ import { LoginComponent } from './login/login.component';
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 import { SearchHospitalComponent } from './search-hospital/search-hospital.component';
 import { HospitalDetailComponent } from './hospital-detail/hospital-detail.component';
-import { HttpModule, Http, Response, RequestOptions, Headers } from '@angular/http';
+/*import { HttpModule, Http, Response, RequestOptions, Headers } from '@angular/http';*/
+import { HttpClientModule } from '@angular/common/http';
+
 import { HttptestComponent } from './httptest/httptest.component';
+import { HospitalsService } from './hospitals.service';
 
 @NgModule({
   declarations: [
@@ -37,9 +40,9 @@ import { HttptestComponent } from './httptest/httptest.component';
     BrowserModule,
     BootstrapModule,
     AppRoutingModule,
-    HttpModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HospitalsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

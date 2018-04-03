@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response, RequestOptions, Headers } from '@angular/http';
+/*import { Http, Response, RequestOptions, Headers } from '@angular/http';*/
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-httptest',
   /*templateUrl: './httptest.component.html',
@@ -32,15 +33,15 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 })
 export class HttptestComponent implements OnInit {
   apiRoot: string = "http://httpbin.org";
-  contineoRoot: string= "https://115.112.92.146:48443/contineonx-web-admin/daouda-healthyme-api"
-  constructor(private http: Http) { }
+  contineoRoot: string= "https://115.112.92.146:48443/contineonx-web-admin/daouda-healthyme-api";
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
   doGET() {
     console.log("GET");
   let url = `${this.contineoRoot}/hospitals`;
-  this.http.get(url).subscribe(res => console.log(res.text())); 
+  this.http.get(url).subscribe(res => console.log(res)); 
   }
 
   doPOST() {
