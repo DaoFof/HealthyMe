@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 import { BootstrapModule } from './bootstrap-module/bootstrap-module.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './_layout/header/header.component';
@@ -14,11 +16,14 @@ import { LoginComponent } from './login/login.component';
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 import { SearchHospitalComponent } from './search-hospital/search-hospital.component';
 import { HospitalDetailComponent } from './hospital-detail/hospital-detail.component';
-/*import { HttpModule, Http, Response, RequestOptions, Headers } from '@angular/http';*/
-import { HttpClientModule } from '@angular/common/http';
+import { GridHosptitalComponent } from './grid-hosptital/grid-hosptital.component';
 
 import { HttptestComponent } from './httptest/httptest.component';
 import { HospitalsService } from './hospitals.service';
+
+import { AgmCoreModule } from '@agm/core';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 
 @NgModule({
   declarations: [
@@ -34,13 +39,18 @@ import { HospitalsService } from './hospitals.service';
     SiteLayoutComponent,
     SearchHospitalComponent,
     HospitalDetailComponent,
-    HttptestComponent
+    HttptestComponent,
+    GridHosptitalComponent
   ],
   imports: [
     BrowserModule,
     BootstrapModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCHQyx6ONu1Djj6FXR_G-NPcNbh-eYK9tA'
+    }),
+    NgxDatatableModule
   ],
   providers: [HospitalsService],
   bootstrap: [AppComponent]

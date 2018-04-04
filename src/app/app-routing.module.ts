@@ -8,6 +8,7 @@ import { RegistrationComponent }      from './registration/registration.componen
 import { SearchHospitalComponent } from './search-hospital/search-hospital.component';
 import { HospitalDetailComponent } from './hospital-detail/hospital-detail.component';
 import { HttptestComponent } from './httptest/httptest.component';
+import { GridHosptitalComponent } from './grid-hosptital/grid-hosptital.component';
 
 import { SiteLayoutComponent }      from './_layout/site-layout/site-layout.component';
 
@@ -29,7 +30,8 @@ const routes: Routes = [
 
   { path: 'searchhostpital', component: SearchHospitalComponent },
   {path : 'hospital/:id', component: HospitalDetailComponent},
-  {path: 'httpTest', component: HttptestComponent}
+  {path: 'httpTest', component: HttptestComponent},
+  {path: 'hospitalGrid', component: GridHosptitalComponent}
   /*{ path: 'registration', component: RegistrationComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },

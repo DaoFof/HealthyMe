@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HospitalsService } from '../hospitals.service';
-import { Observable } from 'rxjs/Observable';
 
 
 @Component({
@@ -9,15 +8,14 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./search-hospital.component.css']
 })
 export class SearchHospitalComponent implements OnInit {
-  hospitals: Observable<any[]>;
+  hospitals;
   constructor(private hospitalsService : HospitalsService) { }
 
   ngOnInit() {
     this.getHospitals();
   }
   getHospitals(): void{
-    this.hospitalsService.getHospitals()
-            .subscribe(res => console.log(res['result']));
-    console.log(this.hospitals);
+    this.hospitals = this.hospitalsService.getHospitals();
+    /*console.log(this.hospitals);*/
   }
 }
