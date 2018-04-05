@@ -21,7 +21,7 @@ import { HospitalsService } from '../hospitals.service';
         [columnMode]="'force'"
         [headerHeight]="40"
         [footerHeight]="40"
-        [limit]="1"
+        [limit]="10"
         [rowHeight]="'auto'"
         [reorderable]="reorderable">
       </ngx-datatable>

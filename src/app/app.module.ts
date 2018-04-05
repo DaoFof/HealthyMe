@@ -23,6 +23,7 @@ import { HospitalsService } from './hospitals.service';
 
 import { AgmCoreModule } from '@agm/core';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     SearchHospitalComponent,
     HospitalDetailComponent,
     HttptestComponent,
-    GridHosptitalComponent
+    GridHosptitalComponent,
+    SearchDoctorComponent
   ],
   imports: [
     BrowserModule,
