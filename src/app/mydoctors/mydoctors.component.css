@@ -1,0 +1,18 @@
+
+.div > h2{
+    margin-top: 0px !important;
+}
+.element{
+    height: auto;
+    background-color: #EDF2F5;
+    margin-top: 1%;
+    border: thin solid #BFC9CB;
+    border-radius: 3%;
+}
+div > p{   
+    text-align: left;
+    margin-top: 5px;
+}
+div > a.btn-info{
+    margin-bottom: 15px;
+}

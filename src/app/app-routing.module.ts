@@ -10,7 +10,14 @@ import { HospitalDetailComponent } from './hospital-detail/hospital-detail.compo
 import { HttptestComponent } from './httptest/httptest.component';
 import { GridHosptitalComponent } from './grid-hosptital/grid-hosptital.component';
 import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
+
 import { ProfilePatientComponent } from './profile-patient/profile-patient.component';
+//Profile patients subcomponents
+import { MydoctorsComponent } from './mydoctors/mydoctors.component';
+import { MyhospitalsComponent } from './myhospitals/myhospitals.component';
+import { MyrecordsComponent } from './myrecords/myrecords.component';
+import { MyconsultationsComponent } from './myconsultations/myconsultations.component';
+import { MyprescriptionsComponent } from './myprescriptions/myprescriptions.component';
 
 import { SiteLayoutComponent }      from './_layout/site-layout/site-layout.component';
 
@@ -27,7 +34,16 @@ const routes: Routes = [
       { path: 'registration', component: RegistrationComponent },
       { path: 'informations', component: InformationsComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'patientProfile', component: ProfilePatientComponent },
+      { path: 'patientProfile', 
+        component: ProfilePatientComponent,
+        //sub components
+        children:[
+          {path: 'mydoctors', component: MydoctorsComponent},
+          {path: 'myhospitals', component: MyhospitalsComponent},
+          {path: 'myrecords', component: MyrecordsComponent},
+          {path: 'myconsultations', component: MyconsultationsComponent},
+          {path: 'myprescriptions', component: MyprescriptionsComponent}
+        ]},
     ]
 },
 

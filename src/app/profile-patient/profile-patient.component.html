@@ -18,19 +18,17 @@
           <div class="row">
             <nav class="col-md-12">
               <ul>
-                <li><a class="no-style">Hospitals</a></li>
-                <li><a class="no-style">Doctors</a></li>
-                <li><a class="no-style">Records</a></li>
-                <li><a class="no-style">Consultations</a></li>
-                <li><a class="no-style">Prescriptions</a></li>
+                <li><a class="no-style" routerLink='myhospitals'>Hospitals</a></li>
+                <li><a class="no-style" routerLink='mydoctors'>Doctors</a></li>
+                <li><a class="no-style" routerLink='myrecords'>Records</a></li>
+                <li><a class="no-style" routerLink='myconsultations'>Consultations</a></li>
+                <li><a class="no-style" routerLink='myprescriptions'>Prescriptions</a></li>
               </ul>
             </nav>
           </div>
           <hr>
           <div class="actions-container">
-            <div class="row">
-
-            </div>
+            <router-outlet></router-outlet>
           </div>
         </div>
       </div>

@@ -25,6 +25,14 @@ import { AgmCoreModule } from '@agm/core';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 import { ProfilePatientComponent } from './profile-patient/profile-patient.component';
+import { MydoctorsComponent } from './mydoctors/mydoctors.component';
+import { MyhospitalsComponent } from './myhospitals/myhospitals.component';
+import { MyrecordsComponent } from './myrecords/myrecords.component';
+import { MyconsultationsComponent } from './myconsultations/myconsultations.component';
+import { MyprescriptionsComponent } from './myprescriptions/myprescriptions.component';
+
+//utils
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 @NgModule({
@@ -44,7 +52,13 @@ import { ProfilePatientComponent } from './profile-patient/profile-patient.compo
     HttptestComponent,
     GridHosptitalComponent,
     SearchDoctorComponent,
-    ProfilePatientComponent
+    ProfilePatientComponent,
+    MydoctorsComponent,
+    MyhospitalsComponent,
+    MyrecordsComponent,
+    MyconsultationsComponent,
+    MyprescriptionsComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +66,7 @@ import { ProfilePatientComponent } from './profile-patient/profile-patient.compo
     AppRoutingModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCHQyx6ONu1Djj6FXR_G-NPcNbh-eYK9tA'
+      apiKey: 'AIzaSyCHQyx6ONu1Djj6FXR_G-NPcNbh-eYK9tA' //map  key
     }),
     NgxDatatableModule
   ],
