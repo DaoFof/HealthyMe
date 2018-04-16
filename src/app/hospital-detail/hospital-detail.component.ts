@@ -27,7 +27,9 @@ export class HospitalDetailComponent implements OnInit {
   async getHospital(){
     const id = this.route.snapshot.paramMap.get('id');
     this.hospital = await this.hospitalsService.getHospital(id);
-    this.hospitalLocation = this.hospital[0].addressline1 + ', ' + this.hospital[0].city + ', ' + this.hospital[0].country;
+    console.log(this.hospital);
+    
+    this.hospitalLocation = this.hospital.name + ', ' + this.hospital.city + ', ' + this.hospital.country;
   }
   
 }
