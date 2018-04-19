@@ -28,7 +28,7 @@ export class HospitalsService {
     return this.hospitalGET(url);
   }
   getMyHospital(patientId: string){
-    let url = `${this.adress}/patient/${patientId}`; 
+    let url = `${this.adress}/patientHospital/${patientId}`; 
     return this.hospitalGET(url);
   }
 }
