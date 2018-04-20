@@ -33,6 +33,7 @@ import { MyprescriptionsComponent } from './myprescriptions/myprescriptions.comp
 
 //utils
 import { PaginationComponent } from './pagination/pagination.component';
+import { DoctorsService } from './doctors.service';
 
 
 @NgModule({
@@ -70,7 +71,7 @@ import { PaginationComponent } from './pagination/pagination.component';
     }),
     NgxDatatableModule
   ],
-  providers: [HospitalsService],
+  providers: [HospitalsService, DoctorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

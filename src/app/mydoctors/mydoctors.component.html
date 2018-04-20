@@ -1,64 +1,49 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-5 col-md-offset-1 element" >
-      <h3>
-        Doctor Name
-      </h3>
-      <p>
-        Specialist in : Speciality in Departement of DEPARTEMENT, HOSPITAL, City
-      </p>
-      <p>
-        Last Contact : DATE OF RENDEZ-VOUS
-      </p>
-      <p>
-          Expertise rate: RATE
-        </p>
-      <a class="btn btn-info btn-md">See More <span class="fa fa-chevron-circle-right"></span></a>
-    </div>
-    <div class="col-md-5 element" style="margin-left: 1%">
-        <h3>
-            Doctor Name
-          </h3>
-          <p>
-            Specialist in : Speciality in Departement of DEPARTEMENT, HOSPITAL, City
-          </p>
-          <p>
-            Last Contact : DATE OF RENDEZ-VOUS
-          </p>
-          <p>
-              Expertise rate: RATE
+      <div *ngFor = "let doctor of doctors; let i = index">
+        <div class="col-md-5 col-md-offset-1 element" *ngIf = "evenOrOdd(i) == false">
+            <h3>
+              {{doctor.name}}
+            </h3>
+            <div class="row text-cutter">
+              <p class="text-center col-md-12">
+                  Specialized in {{doctor.medicalField}}, {{doctor.city}}, {{doctor.country}}
+              </p>
+            </div>
+            <span class="row">
+                <p class="col-md-6">Expertise</p>
+                <div class="rating col-md-6">
+                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+                <p class="col-md-12">300 notes by patients</p>
+            </span>
+            <p class="text-cutter">
+              Last Contact : DATE OF RENDEZ-VOUS
             </p>
-          <a class="btn btn-info btn-md">See More <span class="fa fa-chevron-circle-right"></span></a>
-    </div>
-    <div class="col-md-5 col-md-offset-1 element" >
-        <h3>
-            Doctor Name
-          </h3>
-          <p>
-            Specialist in : Speciality in Departement of DEPARTEMENT, HOSPITAL, City
-          </p>
-          <p>
-            Last Contact : DATE OF RENDEZ-VOUS
-          </p>
-          <p>
-            Expertise rate: RATE
-          </p>
-          <a class="btn btn-info btn-md">See More <span class="fa fa-chevron-circle-right"></span></a>
-    </div>
-    <div class="col-md-5 element" style="margin-left: 1%">
-        <h3>
-            Doctor Name
-          </h3>
-          <p>
-            Specialist in : Speciality in Departement of DEPARTEMENT, HOSPITAL, City
-          </p>
-          <p>
-            Last Contact : DATE OF RENDEZ-VOUS
-          </p>
-          <p>
-              Expertise rate: RATE
-            </p>
-          <a class="btn btn-info btn-md">See More <span class="fa fa-chevron-circle-right"></span></a>
+            
+            <a class="btn btn-info btn-md">See More <span class="fa fa-chevron-circle-right"></span></a>
+        </div>
+        <div class="col-md-5 element" style="margin-left: 1%" *ngIf = "evenOrOdd(i) == true">
+            <h3>
+              {{doctor.name}}
+            </h3>
+            <div class="row text-cutter">
+                <p class="text-center col-md-12">
+                    Specialized in {{doctor.medicalField}}, {{doctor.city}}, {{doctor.country}}
+                </p>
+              </div>
+              <span class="row">
+                <p class="col-md-6">Expertise</p>
+                <div class="rating col-md-6">
+                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+                <p class="col-md-12">300 notes by patients</p>
+              </span>
+              <p>
+                Last Contact : DATE OF RENDEZ-VOUS
+              </p>
+              <a class="btn btn-info btn-md">See More <span class="fa fa-chevron-circle-right"></span></a>
+        </div>
     </div>
   </div>
   <app-pagination></app-pagination>

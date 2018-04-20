@@ -3,32 +3,32 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class HospitalsService {
+export class DoctorsService {
 
   constructor(private http: HttpClient) { }
+
   contineoRoot: string= "https://115.112.92.146:48443/contineonx-web-admin/daouda-healthyme-api";
   herokuApiRoot: string = "https://shrouded-wildwood-20663.herokuapp.com"
   localApi: string = "http://localhost:3000";
   adress = this.localApi;
-  hospitalGET(url:string){
+  doctorGET(url:string){
     return this.http.get(url).toPromise().then(
       res =>{
-        return res['hospitals'] || res['hospital'];
+        return res['doctor'] || res['doctors'];
       },
       error =>(console.log(error))//error handle 
     );
   }
-  //in case of contineoRoot : hospitals?id=
-  getHospitals(){
-    let url = `${this.adress}/hospital`;
-    return this.hospitalGET(url);
+  getDoctors(){
+    let url = `${this.adress}/doctor`;
+    return this.doctorGET(url);
   }
-  getHospital(id: string){
-    let url = `${this.adress}/hospital/${id}`; 
-    return this.hospitalGET(url);
+  getDoctor(id){
+    let url = `${this.adress}/doctor/${id}`;
+    return this.doctorGET(url)
   }
-  getMyHospitals(patientId: string){
-    let url = `${this.adress}/patientHospital/${patientId}`; 
-    return this.hospitalGET(url);
+  getMyDoctors(patientId: string){
+    let url = `${this.adress}/patientDoctor/${patientId}`;
+    return this.doctorGET(url)
   }
 }

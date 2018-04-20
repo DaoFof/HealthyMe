@@ -20,7 +20,7 @@ export class MyhospitalsComponent implements OnInit {
     this.getHospitals();
   }
  async getHospitals(){
-    this.hospitals = await this.hospitalsService.getMyHospital(this.mockPatientId);
+    this.hospitals = await this.hospitalsService.getMyHospitals(this.mockPatientId);
     console.log(this.hospitals);
   }
 }

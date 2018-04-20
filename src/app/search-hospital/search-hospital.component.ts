@@ -14,8 +14,8 @@ export class SearchHospitalComponent implements OnInit {
   ngOnInit() {
     this.getHospitals();
   }
-  getHospitals(): void{
-    this.hospitals = this.hospitalsService.getHospitals();
+  async getHospitals(){
+    this.hospitals = await this.hospitalsService.getHospitals();
     /*console.log(this.hospitals);*/
   }
 }
