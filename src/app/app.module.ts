@@ -35,6 +35,9 @@ import { MyprescriptionsComponent } from './myprescriptions/myprescriptions.comp
 import { PaginationComponent } from './pagination/pagination.component';
 import { DoctorsService } from './doctors.service';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule } from 'angular-calendar';
+
 
 @NgModule({
   declarations: [
@@ -69,7 +72,9 @@ import { DoctorsService } from './doctors.service';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCHQyx6ONu1Djj6FXR_G-NPcNbh-eYK9tA' //map  key
     }),
-    NgxDatatableModule
+    NgxDatatableModule,
+    BrowserAnimationsModule,
+    CalendarModule.forRoot()
   ],
   providers: [HospitalsService, DoctorsService],
   bootstrap: [AppComponent]
