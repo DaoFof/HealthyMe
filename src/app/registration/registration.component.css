@@ -1,155 +1,106 @@
+/*
+/* Created by Filipe Pina
+ * Specific styles of signin, register, component
+ */
+/*
+ * General styles
+ */
 
-*, *:before, *:after {
-  box-sizing: border-box;
+
+.box{
+ margin:50px 15px;
 }
-html {
-  overflow-y: scroll;
+
+h1.title { 
+font-size: 50px;
+font-family: 'Passion One', cursive; 
+font-weight: 400; 
 }
-body {
-  background: #c1bdba;
-  font-family: 'Titillium Web', sans-serif;
+
+hr{
+width: 10%;
+color: #fff;
 }
-a {
-  text-decoration: none;
-  color: #00A3FF;
-  transition: 0.5s ease;
+
+.form-group{
+margin-bottom: 15px;
 }
-a:hover {
-  color: #0D4874;
+
+label{
+margin-bottom: 15px;
 }
-.form {
-  background: rgba(19, 35, 47, .9);
-  padding: 40px;
-  max-width: 800px;
-  margin: 40px auto;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, .3);
+
+input,
+input::-webkit-input-placeholder {
+  font-size: 11px;
+  padding-top: 3px;
 }
-.tab-group {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
+
+.box-login{
+ background-color: #fff;
+  /* shadows and rounded borders */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
 }
-.tab-group:after {
-  content: "";
-  display: table;
-  clear: both;
+.form-control {
+  height: auto!important;
+padding: 8px 12px !important;
 }
-.tab-group li a {
-  display: block;
-  text-decoration: none;
-  padding: 15px;
-  background: rgba(160, 179, 176, .25);
-  color: #a0b3b0;
-  font-size: 20px;
-  float: left;
-  width: 33.33%;
-  text-align: center;
+.input-group {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+#button {
+  border: 1px solid #ccc;
+  margin-top: 28px;
+  padding: 6px 12px;
+  color: #666;
+  text-shadow: 0 1px #fff;
   cursor: pointer;
-  transition: 0.5s ease;
+  -moz-border-radius: 3px 3px;
+  -webkit-border-radius: 3px 3px;
+  border-radius: 3px 3px;
+  -moz-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+  box-shadow: 0 1px #fff inset, 0 1px #ddd;
+  background: #f5f5f5;
+  background: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+  background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+  background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+  background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
 }
-.tab-group li a:hover {
-  background: #0D4874;
-  color: #fff;
+.box-center{
+ margin-top: 30px;
+ margin: 0 auto;
+ max-width: 400px;
+  padding: 10px 40px;
+background:#3E6F81;
+    color: #FFF;
+  text-shadow: none;
+-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+
 }
-.tab-group .active a {
-  background: #00A3FF;
-  color: #fff;
+span.input-group-addon i {
+  color: #3E6F81;
+  font-size: 17px;
 }
-.tab-content > div:last-child {
-  display: none;
+
+.login-button{
+margin-top: 5px;
 }
-h1 {
-  text-align: center;
-  color: #fff;
-  font-weight: 300;
-  margin: 0 0 40px;
-}
-label {
-  position: absolute;
-  transform: translateY(6px);
-  left: 13px;
-  color: rgba(255, 255, 255, .5);
-  transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-  font-size: 22px;
-}
-label .req {
-  margin: 2px;
-  color: #00A3FF;
-}
-label.active {
-  transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
-}
-label.active .req {
-  opacity: 0;
-}
-label.highlight {
-  color: #fff;
-}
-input, textarea {
-  font-size: 22px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 5px 10px;
-  background: none;
-  background-image: none;
-  border: 1px solid #a0b3b0;
-  color: #fff;
-  border-radius: 0;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-}
-input:focus, textarea:focus {
-  outline: 0;
-  border-color: #00A3FF;
-}
-textarea {
-  border: 2px solid #a0b3b0;
-  resize: vertical;
-}
-.field-wrap {
-  position: relative;
-  margin-bottom: 40px;
-}
-.top-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.top-row > div {
-  float: left;
-  width: 48%;
-  margin-right: 4%;
-}
-.top-row > div:last-child {
-  margin: 0;
-}
-.button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background: #00A3FF;
-  color: #fff;
-  transition: all 0.5s ease;
-  -webkit-appearance: none;
-}
-.button:hover, .button:focus {
-  background: #0D4874;
-}
-.button-block {
-  display: block;
-  width: 100%;
-}
-.forgot {
-  margin-top: -20px;
-  text-align: right;
+
+.login-register{
+font-size: 11px;
+text-align: center;
 }

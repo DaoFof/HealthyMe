@@ -1,106 +1,102 @@
-<div class="form" style="margin-top: 20px;">
-	<h1>Sign Up for Free</h1>
-	<ul class="tab-group">
-	  <li class="tab active" ><a (click) = "changeView()" data-href="#patient">Patient</a></li>
-	  <li class="tab"><a (click) = "changeView()" data-href="#doctor">Doctor</a></li>
-	  <li class="tab"><a (click) = "changeView()" data-href="#hospitalM">Hospital Manager</a></li>
-	</ul>
-	
-	<div class="tab-content">
-	  <div id="patient">   
-		
-		<form action="/" method="post">
-		
-		<div class="top-row">
-		  <div class="field-wrap">
-			<input type="text" required autocomplete="off" placeholder="First Name"/>
-		  </div>
-		  <div class="field-wrap">
-			<input type="text"required autocomplete="off" placeholder = "Last Name"/>
-		  </div>
-		</div>
+<div class="container">
+	<div class="row box">
+			<div class="box-login box-center">
+				<div class="box-header text-center">
+					<h1>Registration</h1>
+				</div>
+				<form action="" class="box-body" #regForm = "ngForm" (ngSubmit)="onSubmit()" >
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="firstname" class="cols-sm-2 control-label">First name</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+										<input required #firstName = "ngModel" [(ngModel)]="model.firstName" type="text" class="form-control" name="firstName" id="firstname"  placeholder="Enter your First Name"/>
+									</div>
+								</div>
+								<div [hidden]="firstName.valid || firstName.pristine"
+										class="alert alert-danger">
+									First name is required
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="lastname" class="cols-sm-2 control-label">Last name</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<input required #lastName="ngModel" [(ngModel)]="model.lastName" type="text" class="form-control" name="lastName" id="lastname"  placeholder="Enter your Last Name"/>
+									</div>
+								</div>
+								<div [hidden]="lastName.valid || lastName.pristine"
+										class="alert alert-danger">
+									Last name is required
+								</div>
+							</div>
+						</div>
+					</div>
 
-		<div class="field-wrap">
-		  <input type="email"required autocomplete="off" placeholder="Email "/>
-		</div>
-		
-		<div class="top-row">
-			<div class="field-wrap">
-				<input type="password"required autocomplete="off" placeholder="Password"/>
-			  </div>
-			  <div class="field-wrap">
-				  <input type="password"required autocomplete="off" placeholder="Re-Password"/>
-			  </div>
-		</div>
-		
-		<button type="submit" class="button button-block">Get Started</button>
-		
-		</form>
+					<div class="form-group">
+						<label for="email" class="cols-sm-2 control-label">Your Email</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+								<input required [(ngModel)]="model.email" type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="password" class="cols-sm-2 control-label">Password</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+										<input required #password="ngModel" [(ngModel)]="model.password" type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<input required #repassword="ngModel" [(ngModel)]="model.re_password" type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+							<div [hidden]="(repassword.untouched || repassword.pristine) || (repassword.value == password.value)" class="alert alert-danger">
+									Passwords are not equals
+								</div>
+								<div [hidden]="(password.untouched || password.pristine) ||	 password.value.length >= 8" class="alert alert-danger">
+										Password should be at least 8 characters
+									</div>
+					</div>
 
-	  </div>
-	  
-	  <div id="doctor">
-		<form action="/" method="post">
-		
-			<div class="top-row">
-			  <div class="field-wrap">
-				<input type="text" required autocomplete="off" placeholder="First Name"/>
-			  </div>
-			  <div class="field-wrap">
-				<input type="text"required autocomplete="off" placeholder = "Last Name"/>
-			  </div>
+					<div class="form-group">
+							<label for="usertype" class="cols-sm-2 control-label">User type</label>
+							<select class="form-control" id="usertype"
+											required
+											[(ngModel)]="model.userType" name="userType"
+											#userType="ngModel">
+								<option *ngFor="let type of Types" [value]="type">{{type}}</option>
+							</select>
+							<div [hidden]="userType.valid || userType.pristine" class="alert alert-danger">
+									Type is required
+							</div>
+						</div>
+					<div class="form-group ">
+						<button [disabled]="!regForm.form.valid" type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+					</div>
+					
+
+				</form>
 			</div>
-	
-			<div class="field-wrap">
-			  <input type="email"required autocomplete="off" placeholder="Email "/>
-			</div>
-			
-			<div class="top-row">
-				<div class="field-wrap">
-					<input type="password"required autocomplete="off" placeholder="Password"/>
-				  </div>
-				  <div class="field-wrap">
-					  <input type="password"required autocomplete="off" placeholder="Re-Password"/>
-				  </div>
-			</div>
-			
-			<button type="submit" class="button button-block">Get Started</button>
-			
-			</form>
-
-	  </div>
-	  <div id="hospitalM">   
-		
-		<form action="/" method="post">
-		
-		<div class="top-row">
-		  <div class="field-wrap">
-			<input type="text" required autocomplete="off" placeholder="First Name"/>
-		  </div>
-		  <div class="field-wrap">
-			<input type="text"required autocomplete="off" placeholder = "Last Name"/>
-		  </div>
-		</div>
-
-		<div class="field-wrap">
-		  <input type="email"required autocomplete="off" placeholder="Email "/>
-		</div>
-		
-		<div class="top-row">
-			<div class="field-wrap">
-				<input type="password"required autocomplete="off" placeholder="Password"/>
-			  </div>
-			  <div class="field-wrap">
-				  <input type="password"required autocomplete="off" placeholder="Re-Password"/>
-			  </div>
-		</div>
-		
-		<button type="submit" class="button button-block">Get Started</button>
-		
-		</form>
-
-	  </div>
-	  
-	</div><!-- tab-content -->
-	
-</div> <!-- /form -->
+	</div>
+</div>

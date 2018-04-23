@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 import { BootstrapModule } from './bootstrap-module/bootstrap-module.module';
 import { AppComponent } from './app.component';
@@ -37,6 +38,7 @@ import { DoctorsService } from './doctors.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule } from 'angular-calendar';
+import { RegistrationService } from './registration.service';
 
 
 @NgModule({
@@ -74,9 +76,10 @@ import { CalendarModule } from 'angular-calendar';
     }),
     NgxDatatableModule,
     BrowserAnimationsModule,
-    CalendarModule.forRoot()
+    CalendarModule.forRoot(),
+    FormsModule
   ],
-  providers: [HospitalsService, DoctorsService],
+  providers: [HospitalsService, DoctorsService, RegistrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
