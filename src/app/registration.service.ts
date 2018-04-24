@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class RegistrationService {
 
-  constructor(private http: HttpClient,) { }
+  constructor(private http: HttpClient) { }
 
   contineoRoot: string= "https://115.112.92.146:48443/contineonx-web-admin/daouda-healthyme-api";
   herokuApiRoot: string = "https://shrouded-wildwood-20663.herokuapp.com"
